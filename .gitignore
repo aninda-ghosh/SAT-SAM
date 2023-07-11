@@ -1,0 +1,3 @@
+*.geojson
+*.png
+__pycache__
