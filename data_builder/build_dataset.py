@@ -16,7 +16,7 @@ def get_transform(train):
         transforms.append(T.RandomHorizontalFlip(0.5))
     return T.Compose(transforms)
 
-class ParcelDataset(torch.utils.data.Dataset):
+class PlanetscopeDataset(torch.utils.data.Dataset):
     def __init__(self, root, train=False):
         self.root = root
         self.transforms = get_transform(train)
@@ -30,21 +30,26 @@ class ParcelDataset(torch.utils.data.Dataset):
         img_path = []
         mask_path = []
         geojson_path = []
+        ensemble_path = []
 
         for i in range(len(lines)):
             img_path.append(self.root+lines[i][0])
             mask_path.append(self.root+lines[i][1])
             geojson_path.append(self.root+lines[i][2])
+            ensemble_path.append(self.root+lines[i][3])
 
         # load all image files, sorting them to
         # ensure that they are aligned
         self.imgs = img_path
         self.masks = mask_path
+        self.geojson = geojson_path
+        self.ensemble = ensemble_path
 
     def __getitem__(self, idx):
         # load images ad masks
         img_path = self.imgs[idx]
         mask_path = self.masks[idx]
+        ensemble_path = self.ensemble[idx]
         img = Image.open(img_path).convert("RGB")
         # note that we haven't converted the mask to RGB,
         # because each color corresponds to a different instance
@@ -111,10 +116,15 @@ class ParcelDataset(torch.utils.data.Dataset):
         target["area"] = torch.as_tensor(np.array(target["area"], dtype=np.float32))
         target["iscrowd"] = torch.as_tensor(np.array(target["iscrowd"], dtype=np.int64))
 
+
+        # Read the ensemble layer and convert to binary mask
+        ensemble = np.load(ensemble_path)
+
+
         if self.transforms is not None:
             rpn_img, target = self.transforms(img, target)
 
-        return img, rpn_img, target
+        return img, rpn_img, target, ensemble
 
     def __len__(self):
         return len(self.imgs)
