@@ -22,7 +22,8 @@ class RPN_Model():
         # and replace the mask predictor with a new one
         self.model.roi_heads.mask_predictor = MaskRCNNPredictor(in_features_mask, hidden_layer, num_classes)
 
-        self.model.load_state_dict(torch.load(checkpoint))
+        if checkpoint is not None:
+            self.model.load_state_dict(torch.load(checkpoint))
 
         self.model.to(self.device)
     
@@ -38,7 +39,8 @@ class RPN_Model():
 
         predictions = {
             'boxes': predictions[0]['boxes'],
-            'scores': predictions[0]['scores']
+            'scores': predictions[0]['scores'],
+            'masks': predictions[0]['masks']
         }
 
         return predictions
@@ -48,10 +50,12 @@ class RPN_Model():
         keep = torchvision.ops.nms(predictions['boxes'], predictions['scores'], nms_threshold)
         predictions['boxes'] = predictions['boxes'][keep]    
         predictions['scores'] = predictions['scores'][keep]
+        predictions['masks'] = predictions['masks'][keep]
 
         #Drop the prediction with a score lower than 0.5
         keep = predictions['scores'] > score_threshold
         predictions['boxes'] = predictions['boxes'][keep]
         predictions['scores'] = predictions['scores'][keep]
+        predictions['masks'] = predictions['masks'][keep]
 
         return predictions
