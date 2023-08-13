@@ -3,7 +3,7 @@ import torch
 from scipy.optimize import linear_sum_assignment
 
 
-def filter_boxes(predictions, ensemble, overlap):
+def filter_boxes(predictions, ensemble, beta, threshold):
     ensemble = ensemble.astype(np.uint8)
     filtered_boxes = []
 
@@ -21,9 +21,11 @@ def filter_boxes(predictions, ensemble, overlap):
 
         _overlap = num_ones_intersection / num_ones_box
 
-        if _overlap > overlap:
-            filtered_boxes.append(predictions['boxes'][i])
+        combined_threshold = _overlap * beta + (1 - beta) * predictions['scores'][i]
 
+        if combined_threshold > threshold:
+            filtered_boxes.append(predictions['boxes'][i])
+        
     return filtered_boxes
 
 def iou(mask1, mask2):

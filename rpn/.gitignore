@@ -1,0 +1,8 @@
+dataset/images/*
+dataset/masks/*
+dataset/geojsons/*
+.vscode/*
+__pycache__/*
+*.pth
+*.pt
+*.txt

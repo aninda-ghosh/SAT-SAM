@@ -1,0 +1,19 @@
+{
+    "DATASET1_PATH": "/scratch/aghosh57/SAT-SAM(Dataset)/ps_france/all_dataset/",
+    "DATASET2_PATH": "/scratch/aghosh57/SAT-SAM(Dataset)/ps_rwanda/all_dataset/",
+    "DATASET1": "FRANCE",
+    "DATASET2": "RWANDA",
+    "IMAGE_ENHANCEMENT": "TRUE",
+    "TRAIN_TYPE": "FINETUNE",
+    "LOAD_MODEL": "FALSE",
+    "MODEL_PATH": "",
+    "BACKBONE": "RESNET_50",
+    "NO_OF_CLASSES": 2,
+    "LEARNING_RATE": 0.005,
+    "MOMENTUM": 0.9,
+    "WEIGHT_DECAY": 0.0005,
+    "LEARNING_RATE_STEP": 3,
+    "LEARNING_RATE_GAMMA": 0.1,
+    "EPOCHS": 30,
+    "COMMENTS": "Only trained on France & Rwanda dataset, Manual Seed is 1 with 80% Train and 20% Test Set"
+}
