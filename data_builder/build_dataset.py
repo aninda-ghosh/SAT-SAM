@@ -6,20 +6,10 @@ from PIL import Image
 
 import data_builder.transforms as T
 
-def get_transform(train):
-    transforms = []
-    # converts the image, a PIL image, into a PyTorch Tensor
-    transforms.append(T.ToTensor())
-    if train:
-        # during training, randomly flip the training images
-        # and ground-truth for data augmentation
-        transforms.append(T.RandomHorizontalFlip(0.5))
-    return T.Compose(transforms)
-
 class PlanetscopeDataset(torch.utils.data.Dataset):
-    def __init__(self, root, train=False):
+    def __init__(self, root, transforms=None):
         self.root = root
-        self.transforms = get_transform(train)
+        self.transforms = transforms
 
         with open(self.root+'data.txt') as f:
             lines = f.readlines()
@@ -124,7 +114,7 @@ class PlanetscopeDataset(torch.utils.data.Dataset):
         if self.transforms is not None:
             rpn_img, target = self.transforms(img, target)
 
-        return img, rpn_img, target, ensemble
+        return idx, img, rpn_img, target, ensemble, img_path
 
     def __len__(self):
         return len(self.imgs)

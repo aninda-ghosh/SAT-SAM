@@ -12,6 +12,6 @@
  "WEIGHT_DECAY": 0.0005,
  "LEARNING_RATE_STEP": 3,
  "LEARNING_RATE_GAMMA": 0.1,
- "EPOCHS": 30,
+ "EPOCHS": 80,
  "COMMENTS": "Only trained on Rwanda dataset, Manual Seed is 1 with 80% Train and 20% Test Set"
 }

@@ -5,11 +5,15 @@ from torchvision.models.detection.mask_rcnn import MaskRCNNPredictor, MaskRCNN_R
 
 class RPN_Model():
 
-    def __init__(self, checkpoint, num_classes, device):
+    def __init__(self, checkpoint, num_classes, device, train_type):
         self.device = device
 
         # load an instance segmentation model pre-trained on COCO
-        self.model = torchvision.models.detection.maskrcnn_resnet50_fpn(weights=MaskRCNN_ResNet50_FPN_Weights.DEFAULT)
+        if train_type == 'FINETUNE':
+            # self.model = torchvision.models.detection.maskrcnn_resnet50_fpn(weights=MaskRCNN_ResNet50_FPN_Weights.DEFAULT)
+            self.model = torchvision.models.detection.maskrcnn_resnet50_fpn_v2(weights=torchvision.models.detection.MaskRCNN_ResNet50_FPN_V2_Weights.DEFAULT)
+        elif train_type == 'SCRATCH':
+            self.model = torchvision.models.detection.maskrcnn_resnet50_fpn(weights=None)
 
         # get the number of input features for the classifier
         in_features = self.model.roi_heads.box_predictor.cls_score.in_features
