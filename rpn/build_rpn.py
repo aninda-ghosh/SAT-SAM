@@ -10,7 +10,6 @@ class RPN_Model():
 
         # load an instance segmentation model pre-trained on COCO
         if train_type == 'FINETUNE':
-            # self.model = torchvision.models.detection.maskrcnn_resnet50_fpn(weights=MaskRCNN_ResNet50_FPN_Weights.DEFAULT)
             self.model = torchvision.models.detection.maskrcnn_resnet50_fpn_v2(weights=torchvision.models.detection.MaskRCNN_ResNet50_FPN_V2_Weights.DEFAULT)
         elif train_type == 'SCRATCH':
             self.model = torchvision.models.detection.maskrcnn_resnet50_fpn(weights=None)

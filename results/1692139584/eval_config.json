@@ -1,0 +1,15 @@
+{
+ "DATASET_PATH": "/scratch/aghosh57/SAT-SAM(Dataset)/ps_france/all_dataset/",
+ "DATASET": "FRANCE",
+ "MODEL": "SAT-SAM",
+ "IMAGE_ENHANCEMENT": "FALSE",
+ "FILTRATION": "TRUE",
+ "TRAIN_TYPE": "FINETUNE",
+ "NMS_THRESHOLD": 0.9,
+ "PRED_CONFIDENCE_THRESHOLD": 0.6,
+ "ENSEMBLE_BOX_OVERLAP_THRESHOLD": 0.5,
+ "ENSEMBLE_BOX_BETA": 0.4,
+ "RPN_MODEL_PATH": "rpn/checkpoints/1692042915/rpn_model_1.07.pth",
+ "SAM_MODEL_PATH": "sam/checkpoint/sam_vit_l_0b3195.pth",
+ "MEAN_IOU": 0.5165415335463258
+}

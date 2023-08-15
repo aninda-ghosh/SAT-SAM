@@ -66,14 +66,14 @@ def main():
            
 
     # use our dataset and defined transformations
-    dataset = ParcelDataset(train_config['DATASET_PATH'], get_transform(train=True, image_enhancement=train_config['IMAGE_ENHANCEMENT']))
-    dataset_test = ParcelDataset(train_config['DATASET_PATH'], get_transform(train=False))
+    dataset1 = ParcelDataset(train_config['DATASET1_PATH'], get_transform(train=True, image_enhancement=train_config['IMAGE_ENHANCEMENT']))
+    dataset1_test = ParcelDataset(train_config['DATASET1_PATH'], get_transform(train=False))
 
-    # dataset2 = ParcelDataset(train_config['DATASET2_PATH'], get_transform(train=True, image_enhancement=train_config['IMAGE_ENHANCEMENT']))
-    # dataset2_test = ParcelDataset(train_config['DATASET2_PATH'], get_transform(train=False))
+    dataset2 = ParcelDataset(train_config['DATASET2_PATH'], get_transform(train=True, image_enhancement=train_config['IMAGE_ENHANCEMENT']))
+    dataset2_test = ParcelDataset(train_config['DATASET2_PATH'], get_transform(train=False))
 
-    # dataset = ConcatDataset([dataset1, dataset2])
-    # dataset_test = ConcatDataset([dataset1_test, dataset2_test])
+    dataset = ConcatDataset([dataset1, dataset2])
+    dataset_test = ConcatDataset([dataset1_test, dataset2_test])
 
     torch.manual_seed(1)
     indices = torch.randperm(len(dataset)).tolist()
