@@ -28,6 +28,22 @@ def filter_boxes(predictions, ensemble, beta, threshold):
         
     return filtered_boxes
 
+def filter_masks(predictions, ensemble, threshold):
+    ensemble = ensemble.astype(np.uint8)
+    filtered_masks = []
+    
+    for mask in predictions['masks']:
+        num_ones_box = np.count_nonzero(mask)
+        res = ensemble * mask
+        num_ones_intersection = np.count_nonzero(res)
+
+        _overlap = num_ones_intersection / num_ones_box
+
+        if _overlap > threshold:
+            filtered_masks.append(mask)
+        
+    return filtered_masks
+
 def iou(mask1, mask2):
     intersection = np.logical_and(mask1, mask2)
     union = np.logical_or(mask1, mask2)
