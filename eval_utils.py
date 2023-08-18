@@ -32,7 +32,7 @@ def filter_masks(predictions, ensemble, threshold):
     ensemble = ensemble.astype(np.uint8)
     filtered_masks = []
     
-    for mask in predictions['masks']:
+    for mask in predictions:
         num_ones_box = np.count_nonzero(mask)
         res = ensemble * mask
         num_ones_intersection = np.count_nonzero(res)
