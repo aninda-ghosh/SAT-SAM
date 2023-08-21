@@ -1,13 +1,14 @@
 {
     "DATASET_PATH": "/scratch/aghosh57/SAT-SAM(Dataset)/ps_rwanda/all_dataset/",
-    "REGION" : "FRANCE",
-    "MODEL" : "MASKRCNN",
+    "REGION" : "RWANDA",
+    "MODEL" : "ALL",
     "IMAGE_ENHANCEMENT": "FALSE",
+    "FILTRATION": "FALSE",
     "TRAIN_TYPE": "FINETUNE",
     "NMS_THRESHOLD" : 0.9,
     "PRED_CONFIDENCE_THRESHOLD" : 0.6,
     "ENSEMBLE_BOX_OVERLAP_THRESHOLD" : 0.5, 
     "ENSEMBLE_BOX_BETA" : 0.3,
-    "RPN_MODEL_PATH" : "rpn/checkpoints/1692042915/rpn_model_1.07.pth",
+    "RPN_MODEL_PATH" : "rpn/checkpoints/1692043128/rpn_model_1.09.pth",
     "SAM_MODEL_PATH" : "sam/checkpoint/sam_vit_l_0b3195.pth"
 }
