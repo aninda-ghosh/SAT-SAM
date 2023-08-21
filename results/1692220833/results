@@ -1,0 +1,1 @@
+parcel_id,parcel_path,gt_mask_ct,pred_mask_ct,mean_iou,p_50,r_50,p_70,r_70,p_90,r_90
