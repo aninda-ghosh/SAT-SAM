@@ -1,0 +1,17 @@
+parcel_id,parcel_path,gt_mask_ct,pred_mask_ct,mean_iou,p_50,r_50,p_70,r_70,p_90,r_90
+42,/scratch/aghosh57/SAT-SAM(Dataset)/ps_rwanda/all_dataset/images/0069.png,14,25,0.45,0.24,0.43,0.2,0.36,0.04,0.07
+14,/scratch/aghosh57/SAT-SAM(Dataset)/ps_rwanda/all_dataset/images/0028.png,52,38,0.15,0.13,0.1,0.13,0.1,0.0,0.0
+30,/scratch/aghosh57/SAT-SAM(Dataset)/ps_rwanda/all_dataset/images/0054.png,23,26,0.12,0.08,0.09,0.0,0.0,0.0,0.0
+67,/scratch/aghosh57/SAT-SAM(Dataset)/ps_rwanda/all_dataset/images/0104.png,15,2,0.39,0.5,0.07,0.5,0.07,0.0,0.0
+71,/scratch/aghosh57/SAT-SAM(Dataset)/ps_rwanda/all_dataset/images/0109.png,5,11,0.08,0.0,0.0,0.0,0.0,0.0,0.0
+68,/scratch/aghosh57/SAT-SAM(Dataset)/ps_rwanda/all_dataset/images/0106.png,19,12,0.18,0.17,0.11,0.08,0.05,0.0,0.0
+27,/scratch/aghosh57/SAT-SAM(Dataset)/ps_rwanda/all_dataset/images/0051.png,11,3,0.09,0.0,0.0,0.0,0.0,0.0,0.0
+60,/scratch/aghosh57/SAT-SAM(Dataset)/ps_rwanda/all_dataset/images/0095.png,14,1,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+51,/scratch/aghosh57/SAT-SAM(Dataset)/ps_rwanda/all_dataset/images/0083.png,18,9,0.19,0.22,0.11,0.11,0.06,0.11,0.06
+29,/scratch/aghosh57/SAT-SAM(Dataset)/ps_rwanda/all_dataset/images/0053.png,33,18,0.19,0.22,0.12,0.22,0.12,0.06,0.03
+56,/scratch/aghosh57/SAT-SAM(Dataset)/ps_rwanda/all_dataset/images/0091.png,7,37,0.18,0.03,0.14,0.0,0.0,0.0,0.0
+97,/scratch/aghosh57/SAT-SAM(Dataset)/ps_rwanda/all_dataset/images/0156.png,7,20,0.2,0.05,0.14,0.05,0.14,0.0,0.0
+94,/scratch/aghosh57/SAT-SAM(Dataset)/ps_rwanda/all_dataset/images/0148.png,8,9,0.02,0.0,0.0,0.0,0.0,0.0,0.0
+86,/scratch/aghosh57/SAT-SAM(Dataset)/ps_rwanda/all_dataset/images/0127.png,4,9,0.02,0.0,0.0,0.0,0.0,0.0,0.0
+87,/scratch/aghosh57/SAT-SAM(Dataset)/ps_rwanda/all_dataset/images/0128.png,9,5,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+65,/scratch/aghosh57/SAT-SAM(Dataset)/ps_rwanda/all_dataset/images/0102.png,30,7,0.4,0.43,0.1,0.43,0.1,0.0,0.0
