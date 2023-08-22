@@ -1,7 +1,7 @@
 {
-    "DATASET_PATH": "/scratch/aghosh57/SAT-SAM(Dataset)/ps_france/all_dataset/",
-    "DATASET": "FRANCE",
-    "MODEL": "MASKRCNN",
+    "DATASET_PATH": "/scratch/aghosh57/SAT-SAM(Dataset)/ps_rwanda/all_dataset/",
+    "DATASET": "RWANDA",
+    "MODEL": "SAM",
     "IMAGE_ENHANCEMENT": "FALSE",
     "FILTRATION": "FALSE",
     "TRAIN_TYPE": "FINETUNE",
