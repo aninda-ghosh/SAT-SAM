@@ -1,6 +1,6 @@
 {
-    "DATASET_PATH": "/scratch/aghosh57/SAT-SAM(Dataset)/ps_rwanda/all_dataset/",
-    "REGION" : "RWANDA",
+    "DATASET_PATH": "/scratch/aghosh57/SAT-SAM(Dataset)/ps_france/all_dataset/",
+    "REGION" : "FRANCE",
     "MODEL" : "ALL",
     "IMAGE_ENHANCEMENT": "FALSE",
     "FILTRATION": "FALSE",
